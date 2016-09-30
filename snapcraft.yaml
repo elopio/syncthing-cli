@@ -1,0 +1,19 @@
+name: syncthing-cli
+version: master
+summary: The Syncthing command line interface
+description: |
+  A CLI that talks to the Syncthing REST interface.
+
+grade: devel
+confinement: strict
+
+apps:
+  syncthing-cli:
+    command: syncthing-cli
+    plugs: [network]
+
+parts:
+  syncthing-cli:
+    source: .
+    plugin: go
+    go-importpath: github.com/syncthing/syncthing-cli
